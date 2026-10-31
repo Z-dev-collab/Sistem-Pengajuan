@@ -7,8 +7,12 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     libonig-dev \
     libzip-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
     zip unzip \
     git curl \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip \
     && docker-php-ext-configure sqlite3 \
     && docker-php-ext-install pdo_sqlite

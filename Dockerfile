@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     zip unzip \
     git curl \
+    nodejs \
+    npm \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip \
     && docker-php-ext-install pdo_sqlite
@@ -24,6 +26,10 @@ COPY . .
 
 # Install PHP dependencies (production only)
 RUN composer install --no-dev --prefer-dist --optimize-autoloader
+
+# Install Node dependencies and build assets
+RUN npm install --no-audit --no-fund && \
+    VITE_ASSET_URL=https://kelurahan-website.fly.dev/build/ npm run build
 
 # Prepare storage
 RUN mkdir -p storage/framework/{sessions,views,cache,files} storage/logs \

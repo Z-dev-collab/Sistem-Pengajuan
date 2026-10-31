@@ -1,0 +1,19 @@
+# Railway deployment config
+# Docs: https://docs.railway.app/guides/laravel
+#
+# Steps:
+#   1. Push repo to GitHub
+#   2. Sign up at https://railway.app
+#   3. New project → "Deploy from GitHub repo"
+#   4. Add a PostgreSQL service, connect it
+#   5. Railway auto-detects railway.toml
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile.railway"
+
+[deploy]
+startCommand = "php artisan serve --host=0.0.0.0 --port=$PORT"
+healthcheckPath = "/up"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

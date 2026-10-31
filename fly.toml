@@ -1,0 +1,38 @@
+# Fly.io deployment config for Laravel (SQLite)
+# Docs: https://fly.io/docs/laravel/
+#
+# Steps:
+#   1. Push repo to GitHub
+#   2. Install Fly CLI: https://fly.io/docs/hands-on/install-fly/
+#   3. Run: fly launch --no-deploy
+#   4. Then:
+
+# fly volumes create data --size 1
+# fly secrets set APP_ENV=production
+# fly secrets set APP_DEBUG=false
+# fly secrets set DB_DATABASE=/data/database.sqlite
+# fly deploy
+
+app = "kelurahan-website"
+primary_region = "sin"  # Singapore — terdekat ke Indonesia
+swap_size_mb = 512
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[mounts]
+  source = "data"
+  destination = "/data"
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

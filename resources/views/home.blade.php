@@ -103,43 +103,6 @@
 
     </section>
 
-    <section class="section section-process">
-        <div class="container">
-            <div class="section-heading centered">
-                <p class="eyebrow"><span class="eyebrow-dot"></span> Alur layanan</p>
-                <h2>Empat langkah, selesai.</h2>
-                <p>Proses yang jelas dari awal sampai dokumen Anda siap diambil.</p>
-            </div>
-
-            <ol class="process-grid">
-                <li class="process-step">
-                    <span class="process-number">01</span>
-                    <span class="process-icon"><x-icon name="search" :size="24" /></span>
-                    <h3>Pilih layanan</h3>
-                    <p>Temukan layanan yang sesuai dan pelajari persyaratannya.</p>
-                </li>
-                <li class="process-step">
-                    <span class="process-number">02</span>
-                    <span class="process-icon"><x-icon name="upload" :size="24" /></span>
-                    <h3>Unggah berkas</h3>
-                    <p>Isi formulir dan unggah KTP, KK, serta surat pengantar RT/RW.</p>
-                </li>
-                <li class="process-step">
-                    <span class="process-number">03</span>
-                    <span class="process-icon"><x-icon name="shield-check" :size="24" /></span>
-                    <h3>Petugas verifikasi</h3>
-                    <p>Kami memeriksa kelengkapan berkas dan mengirim kabar lewat WhatsApp.</p>
-                </li>
-                <li class="process-step">
-                    <span class="process-number">04</span>
-                    <span class="process-icon"><x-icon name="file-check" :size="24" /></span>
-                    <h3>Ambil dokumen</h3>
-                    <p>Datang sesuai jadwal dengan membawa berkas asli dan bukti pengajuan.</p>
-                </li>
-            </ol>
-        </div>
-    </section>
-
     <section class="section section-contact">
         <div class="container contact-home-grid">
             <div class="contact-home-copy">

@@ -104,14 +104,6 @@
                     </ul>
                 </div>
 
-                <div class="content-card upload-note-card">
-                    <div class="upload-note-icon"><x-icon name="upload" :size="25" /></div>
-                    <div>
-                        <h2>Cara mengunggah berkas</h2>
-                        <p>Foto atau scan dokumen dengan pencahayaan cukup. Format JPG, PNG, atau PDF, maksimal 2 MB per berkas. Pastikan seluruh tulisan terbaca.</p>
-                    </div>
-                </div>
-
                 <div class="content-card">
                     <h2>Yang perlu diperhatikan</h2>
                     <ul class="check-bullet-list">

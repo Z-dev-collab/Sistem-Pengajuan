@@ -199,18 +199,4 @@
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-panel">
-                <div>
-                    <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> Siap mengajukan?</p>
-                    <h2>Mulai dari rumah. Selesai di kelurahan.</h2>
-                    <p>Isi formulir online dalam beberapa menit. Kami akan mengabari perkembangan berkas Anda.</p>
-                </div>
-                <div class="cta-actions">
-                    <a href="{{ route('services.index') }}" class="btn btn-ghost-light">Lihat syarat layanan</a>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection

@@ -23,6 +23,7 @@ onReady(() => {
     initSubmitButtons();
     initTrackingInputs();
     initTypewriter();
+    initDraggableSummaryCard();
 });
 
 /* ---------- Large text preference ---------- */
@@ -467,4 +468,82 @@ function escapeHtml(value) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+}
+
+/* ---------- Draggable summary card (mobile) ---------- */
+function initDraggableSummaryCard() {
+    const card = document.getElementById('summary-card');
+    if (!card) return;
+
+    const handle = card.querySelector('.summary-card-drag-handle');
+    if (!handle) return;
+
+    let isFixed = false;
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+
+    function setCardFixed(x, y) {
+        card.classList.add('is-fixed');
+        card.style.left = x + 'px';
+        card.style.top = y + 'px';
+        card.dataset.dragged = 'true';
+        isFixed = true;
+    }
+
+    function setCardFlow() {
+        card.classList.remove('is-fixed');
+        card.style.left = '';
+        card.style.top = '';
+        card.dataset.dragged = 'false';
+        isFixed = false;
+    }
+
+    handle.addEventListener('pointerdown', (e) => {
+        if (window.matchMedia('(min-width: 901px)').matches) return;
+        e.preventDefault();
+        isDragging = true;
+        card.classList.add('is-dragging');
+        const rect = card.getBoundingClientRect();
+        startX = e.clientX;
+        startY = e.clientY;
+        startLeft = rect.left;
+        startTop = rect.top;
+        card.setPointerCapture(e.pointerId);
+    });
+
+    handle.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        const clampedX = Math.max(0, Math.min(window.innerWidth - 60, startLeft + dx));
+        const clampedY = Math.max(0, Math.min(window.innerHeight - 60, startTop + dy));
+        card.style.transition = 'none';
+        card.style.left = clampedX + 'px';
+        card.style.top = clampedY + 'px';
+    });
+
+    handle.addEventListener('pointerup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        card.classList.remove('is-dragging');
+        card.style.transition = '';
+
+        const moved = Math.abs(e.clientX - startX) > 8 || Math.abs(e.clientY - startY) > 8;
+        if (moved) {
+            setCardFixed(
+                Math.max(0, Math.min(window.innerWidth - 60, startLeft + (e.clientX - startX))),
+                Math.max(0, Math.min(window.innerHeight - 80, startTop + (e.clientY - startY)))
+            );
+        } else {
+            setCardFlow();
+        }
+    });
+
+    handle.addEventListener('pointercancel', () => {
+        if (isDragging) {
+            isDragging = false;
+            card.classList.remove('is-dragging');
+        }
+    });
 }

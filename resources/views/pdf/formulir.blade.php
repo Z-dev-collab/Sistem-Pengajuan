@@ -159,7 +159,7 @@
     <div class="section-title">Berkas yang Dilampirkan</div>
     <ol class="requirements">
         @foreach($service->requirements as $requirement)
-            <li>{{ $requirement->name }}@if($requirement->note) — {{ $requirement->note }}@endif @unless($requirement->is_mandatory)<em>(jika diperlukan)</em>@endunless</li>
+            <li>{{ data_get($requirement, 'name') }}@if(data_get($requirement, 'note')) — {{ data_get($requirement, 'note') }}@endif @unless(data_get($requirement, 'is_mandatory'))<em>(jika diperlukan)</em>@endunless</li>
         @endforeach
     </ol>
 

@@ -36,6 +36,15 @@ class HomeController extends Controller
                 'estimate_label' => '± 7 hari kerja',
                 'sort_order' => 3,
             ],
+            [
+                'name' => 'Surat Keterangan Domisili Yayasan / Sekretariat',
+                'slug' => 'pengurusan-domisili-yayasan',
+                'tagline' => 'Surat keterangan domisili yayasan atau sekretariat organisasi',
+                'icon' => 'home',
+                'fee_label' => 'Gratis',
+                'estimate_label' => '± 3 hari kerja',
+                'sort_order' => 4,
+            ],
         ];
 
         usort($services, function($a, $b) {

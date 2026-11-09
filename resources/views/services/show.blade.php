@@ -16,7 +16,7 @@
 
             <div class="service-hero-grid">
                 <div class="service-hero-copy">
-                    <span class="service-icon service-icon-lg service-icon-{{ (($service['sort_order'] ?? 1) % 3) ?: 1 }}">
+                    <span class="service-icon service-icon-lg service-icon-{{ (($service['sort_order'] ?? 1) % 4) ?: 4 }}">
                         <x-icon :name="$service['icon']" :size="38" />
                     </span>
                     <p class="eyebrow"><span class="eyebrow-dot"></span> Layanan kelurahan</p>
@@ -39,7 +39,11 @@
                     </div>
                 </div>
 
-                <aside class="service-summary-card">
+                <aside class="service-summary-card" id="summary-card">
+                    <div class="summary-card-drag-handle" aria-label="Geser kartu ringkasan">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="4" r="1.5" fill="currentColor"/><circle cx="11" cy="4" r="1.5" fill="currentColor"/><circle cx="5" cy="8" r="1.5" fill="currentColor"/><circle cx="11" cy="8" r="1.5" fill="currentColor"/></svg>
+                        <span class="drag-hint">geser</span>
+                    </div>
                     <p class="summary-label">Ringkasan layanan</p>
                     <dl class="summary-list">
                         <div>
@@ -114,28 +118,6 @@
                     </ul>
                 </div>
             </div>
-
-            <aside class="service-detail-aside">
-                <div class="sticky-card">
-                    <div class="sidebar-cta">
-                        <span class="sidebar-cta-icon"><x-icon name="clipboard" :size="26" /></span>
-                        <h2>Siap mengajukan?</h2>
-                        <p>Isi formulir online dan unggah ketiga berkas utama. Prosesnya sekitar 5–10 menit.</p>
-                        <a href="{{ route('services.form', $service['slug']) }}" class="btn btn-outline btn-block">
-                            <x-icon name="download" :size="17" />
-                            Unduh Formulir PDF
-                        </a>
-                    </div>
-                    <div class="sidebar-contact">
-                        <h3>Butuh bantuan?</h3>
-                        <p>Petugas kami siap membantu pada jam layanan.</p>
-                        <a href="https://wa.me/{{ config('kelurahan.whatsapp') }}?text={{ urlencode('Halo, saya ingin bertanya tentang '.$service['name'].'.') }}" target="_blank" rel="noopener" class="sidebar-contact-link">
-                            <x-icon name="whatsapp" :size="18" />
-                            <span>Chat WhatsApp<small>{{ config('kelurahan.phone') }}</small></span>
-                        </a>
-                    </div>
-                </div>
-            </aside>
         </div>
     </section>
 

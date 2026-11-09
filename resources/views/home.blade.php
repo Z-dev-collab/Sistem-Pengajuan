@@ -45,6 +45,7 @@
                     <a href="{{ route('services.show', 'pengurusan-kematian') }}">Surat kematian</a>
                     <a href="{{ route('services.show', 'pengurusan-ahli-waris') }}">Ahli waris</a>
                     <a href="{{ route('services.show', 'pengurusan-nikah') }}">Surat nikah</a>
+                    <a href="{{ route('services.show', 'pengurusan-domisili-yayasan') }}">Domisili yayasan</a>
                 </div>
 
                 <ul class="hero-trust">

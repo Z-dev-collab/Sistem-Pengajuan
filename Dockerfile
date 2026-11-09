@@ -29,7 +29,7 @@ RUN composer install --no-dev --prefer-dist --optimize-autoloader
 
 # Install Node dependencies and build assets
 RUN npm install --no-audit --no-fund && \
-    VITE_ASSET_URL=https://kelurahan-website.fly.dev/build/ npm run build
+    npm run build
 
 # Prepare storage
 RUN mkdir -p storage/framework/{sessions,views,cache,files} storage/logs \

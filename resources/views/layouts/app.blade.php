@@ -80,6 +80,7 @@
                 <a href="{{ route('services.show', 'pengurusan-nikah') }}">Pengurusan Nikah</a>
                 <a href="{{ route('services.show', 'pengurusan-ahli-waris') }}">Pengurusan Ahli Waris</a>
                 <a href="{{ route('services.show', 'pengurusan-kematian') }}">Pengurusan Kematian</a>
+                <a href="{{ route('services.show', 'pengurusan-domisili-yayasan') }}">Domisili Yayasan / Sekretariat</a>
             </div>
 
             <div class="footer-col">

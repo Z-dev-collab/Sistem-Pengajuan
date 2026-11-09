@@ -536,7 +536,7 @@ body.nav-open .menu-close-icon { display: block; }
 /* ============ Service list / detail ============ */
 .service-grid-page { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 .service-hero .breadcrumbs { margin-bottom: 2rem; }
-.service-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 21rem; gap: 3rem; align-items: end; }
+.service-hero-grid { display: block; max-width: 52rem; }
 .service-hero-copy .service-icon { margin-bottom: 1.2rem; }
 .service-hero-copy h1 { font-size: clamp(2.4rem, 4vw, 3.5rem); }
 .service-hero-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.3rem; }

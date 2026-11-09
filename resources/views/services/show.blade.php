@@ -38,35 +38,6 @@
                         </a>
                     </div>
                 </div>
-
-                <aside class="service-summary-card" id="summary-card">
-                    <div class="summary-card-drag-handle" aria-label="Geser kartu ringkasan">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="4" r="1.5" fill="currentColor"/><circle cx="11" cy="4" r="1.5" fill="currentColor"/><circle cx="5" cy="8" r="1.5" fill="currentColor"/><circle cx="11" cy="8" r="1.5" fill="currentColor"/></svg>
-                        <span class="drag-hint">geser</span>
-                    </div>
-                    <p class="summary-label">Ringkasan layanan</p>
-                    <dl class="summary-list">
-                        <div>
-                            <dt><x-icon name="wallet" :size="18" /> Biaya</dt>
-                            <dd>{{ $service['fee_label'] }}</dd>
-                        </div>
-                        <div>
-                            <dt><x-icon name="clock" :size="18" /> Estimasi</dt>
-                            <dd>{{ $service['estimate_label'] }}</dd>
-                        </div>
-                        <div>
-                            <dt><x-icon name="calendar" :size="18" /> Jam layanan</dt>
-                            <dd>{{ config('kelurahan.hours') }}</dd>
-                        </div>
-                        <div>
-                            <dt><x-icon name="map-pin" :size="18" /> Lokasi</dt>
-                            <dd>{{ config('kelurahan.name') }}</dd>
-                        </div>
-                    </dl>
-                    @if($service['fee_note'])
-                        <p class="summary-note"><x-icon name="info" :size="15" /> {{ $service['fee_note'] }}</p>
-                    @endif
-                </aside>
             </div>
         </div>
     </section>

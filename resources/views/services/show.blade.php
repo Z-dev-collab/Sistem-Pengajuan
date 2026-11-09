@@ -22,11 +22,6 @@
                     <p class="eyebrow"><span class="eyebrow-dot"></span> Layanan kelurahan</p>
                     <h1>{{ $service['name'] }}</h1>
                     <p class="page-lead">{{ $service['tagline'] }}</p>
-                    <div class="service-hero-meta">
-                        <span><x-icon name="check-circle" :size="17" /> {{ $service['fee_label'] }}</span>
-                        <span><x-icon name="clock" :size="17" /> {{ $service['estimate_label'] }}</span>
-                        <span><x-icon name="file-text" :size="17" /> {{ count($service['requirements']) }} persyaratan</span>
-                    </div>
                     <div class="service-hero-actions">
                         <a href="#" class="btn btn-primary">
                             Ajukan Online

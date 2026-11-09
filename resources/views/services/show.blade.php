@@ -86,22 +86,4 @@
             </div>
         </div>
     </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-panel">
-                <div>
-                    <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> Pelayanan tanpa biaya</p>
-                    <h2>Lengkapi berkas, kami urus sisanya.</h2>
-                    <p>Petugas mengirim kabar melalui WhatsApp atau SMS setiap ada perubahan status.</p>
-                </div>
-                <div class="cta-actions">
-                    <a href="#" class="btn btn-cream">
-                        Ajukan {{ $service['name'] }}
-                        <x-icon name="arrow-right" :size="18" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection

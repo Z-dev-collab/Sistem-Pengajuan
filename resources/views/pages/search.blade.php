@@ -69,10 +69,6 @@
                                     <div class="search-result-copy">
                                         <h3>{{ $service->name }}</h3>
                                         <p>{{ $service->tagline }}</p>
-                                        <div class="search-result-meta">
-                                            <span>{{ $service->fee_label }}</span>
-                                            <span>{{ $service->estimate_label }}</span>
-                                        </div>
                                     </div>
                                     <span class="search-result-arrow"><x-icon name="arrow-right" :size="18" /></span>
                                 </a>

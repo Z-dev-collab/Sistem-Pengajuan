@@ -91,9 +91,6 @@
                     <a href="https://wa.me/{{ config('kelurahan.whatsapp') }}?text={{ urlencode(config('kelurahan.whatsapp_message')) }}" target="_blank" rel="noopener" aria-label="WhatsApp Kelurahan">
                         <x-icon name="whatsapp" :size="20" />
                     </a>
-                    <a href="mailto:{{ config('kelurahan.email') }}" aria-label="Email Kelurahan">
-                        <x-icon name="mail" :size="20" />
-                    </a>
                 </div>
             </div>
 

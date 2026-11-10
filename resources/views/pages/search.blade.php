@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', ($query ? 'Hasil pencarian “' . $query . '”' : 'Pencarian') . ' — ' . config('kelurahan.name'))
+@section('title', $query ? 'Hasil pencarian “' . $query . '”' : 'Pencarian')
 
 @section('content')
     <section class="page-hero search-hero">

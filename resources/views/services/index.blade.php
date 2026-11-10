@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Layanan Administrasi — ' . config('kelurahan.name'))
+@section('title', 'Layanan Administrasi')
 
 @section('content')
     <section class="page-hero">

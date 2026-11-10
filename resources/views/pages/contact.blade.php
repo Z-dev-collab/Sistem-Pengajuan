@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kontak & Lokasi — ' . config('kelurahan.name'))
+@section('title', 'Kontak & Lokasi')
 @section('meta_description', 'Alamat, jam pelayanan, nomor telepon, WhatsApp, dan peta lokasi Kelurahan Batu Selicin.')
 
 @section('content')

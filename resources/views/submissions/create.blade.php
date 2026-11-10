@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ajukan Layanan Online — ' . config('kelurahan.name'))
+@section('title', 'Ajukan Layanan Online')
 
 @section('content')
     <section class="page-hero form-hero">

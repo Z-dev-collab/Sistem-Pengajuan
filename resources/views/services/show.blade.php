@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $service['name'] . ' — ' . config('kelurahan.name'))
-@section('meta_description', $service['tagline'] . ' Lihat syarat, biaya, estimasi waktu, dan unduh formulir.')
+@section('title', $service['name'])
+@section('meta_description', $service['tagline'] . ' Lihat persyaratan, biaya, dan estimasi waktu pelayanan.')
 
 @section('content')
     <section class="page-hero service-hero">

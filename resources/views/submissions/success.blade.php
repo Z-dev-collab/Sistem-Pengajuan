@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pengajuan Berhasil — ' . config('kelurahan.name'))
+@section('title', 'Pengajuan Berhasil')
 
 @section('content')
     <section class="success-section">

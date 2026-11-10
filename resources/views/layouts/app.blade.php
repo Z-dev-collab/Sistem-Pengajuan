@@ -7,6 +7,28 @@
     <title>@yield('title', 'Pelayanan Administrasi') — {{ config('kelurahan.name') }}</title>
     <meta name="description" content="@yield('meta_description', 'Layanan administrasi online Kelurahan Batu Selicin: pengurusan nikah, ahli waris, dan surat keterangan kematian. Ajukan dari rumah, lacak status dengan mudah.')">
     <meta name="theme-color" content="#0c4a37">
+    {{-- Pintu masuk situs selalu Beranda: bukaan langsung ke /layanan
+         (bookmark, shortcut home screen, autocomplete) diarahkan ke beranda sekali per sesi. --}}
+    <script>
+        (function () {
+            try {
+                var KEY = 'wkc_masuk';
+                if (sessionStorage.getItem(KEY) === '1') { return; }
+                if (!{{ request()->routeIs('services.index') ? 'true' : 'false' }}) {
+                    sessionStorage.setItem(KEY, '1');
+                    return;
+                }
+                var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+                var type = nav ? nav.type : 'navigate';
+                var ref = document.referrer || '';
+                var dariDalamSitus = ref.indexOf(location.origin) === 0;
+                sessionStorage.setItem(KEY, '1');
+                if (!dariDalamSitus && type !== 'reload' && type !== 'back_forward') {
+                    location.replace('{{ route('home') }}');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22><rect width=%2248%22 height=%2248%22 rx=%2212%22 fill=%22%230c4a37%22/><path d=%22M24 8l12 4.5V23c0 7.5-5 13-12 15.4C17 36 12 30.5 12 23V12.5L24 8Z%22 fill=%22none%22 stroke=%22%23f5eeda%22 stroke-width=%222%22/><path d=%22M24 17v10M19 22l5-5 5 5M18 31h12%22 fill=%22none%22 stroke=%22%23f5eeda%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')

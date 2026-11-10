@@ -13,6 +13,12 @@ use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Alias umum untuk beranda: selalu arahkan ke halaman utama.
+Route::redirect('/home', '/', 301);
+Route::redirect('/beranda', '/', 301);
+Route::redirect('/index.php', '/', 301);
+
 Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/layanan/{service}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/layanan/{service}/formulir', [ServiceController::class, 'downloadForm'])->name('services.form');

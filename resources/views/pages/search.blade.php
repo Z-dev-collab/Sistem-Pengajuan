@@ -62,7 +62,7 @@
                         </div>
                         <div class="search-result-list">
                             @foreach($services as $service)
-                                <a href="{{ route('services.show', $service) }}" class="search-result-card">
+                                <a href="{{ route('services.show', $service->slug) }}" class="search-result-card">
                                     <span class="service-icon service-icon-{{ ($service->sort_order % 3) ?: 1 }}">
                                         <x-icon :name="$service->icon" :size="26" />
                                     </span>

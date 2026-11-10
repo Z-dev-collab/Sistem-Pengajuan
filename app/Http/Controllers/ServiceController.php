@@ -138,6 +138,15 @@ class ServiceController extends Controller
         return view('services.index', compact('services'));
     }
 
+    /**
+     * Katalog layanan publik (sumber data tunggal untuk daftar, detail, dan pencarian).
+     * Tidak memakai database karena situs ini berjalan sebagai situs statis di Vercel.
+     */
+    public static function catalog(): array
+    {
+        return (new self)->services;
+    }
+
     public function show($slug)
     {
         $service = collect($this->services)->firstWhere('slug', $slug);

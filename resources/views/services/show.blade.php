@@ -22,16 +22,6 @@
                     <p class="eyebrow"><span class="eyebrow-dot"></span> Layanan kelurahan</p>
                     <h1>{{ $service['name'] }}</h1>
                     <p class="page-lead">{{ $service['tagline'] }}</p>
-                    <div class="service-hero-actions">
-                        <a href="#" class="btn btn-primary">
-                            Ajukan Online
-                            <x-icon name="arrow-right" :size="17" />
-                        </a>
-                        <a href="{{ route('services.form', $service['slug']) }}" class="btn btn-outline">
-                            <x-icon name="download" :size="17" />
-                            Unduh Formulir
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>

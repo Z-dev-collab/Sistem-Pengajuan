@@ -51,7 +51,7 @@
                 <ul class="hero-trust">
                     <li><x-icon name="check-circle" :size="18" /> 100% gratis</li>
                     <li><x-icon name="shield-check" :size="18" /> Data aman</li>
-                    <li><x-icon name="whatsapp" :size="18" /> Notifikasi WA/SMS</li>
+                    <li><x-icon name="whatsapp" :size="18" /> Notifikasi WA</li>
                 </ul>
             </div>
 
